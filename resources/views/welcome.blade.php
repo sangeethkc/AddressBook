@@ -63,7 +63,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form id="adduser" action="{{ route('student.update') }}" method="POST">
+                    <form id="edituser" action="{{ route('student.update') }}" method="POST">
                         <div class="modal-body">
                             @csrf
                             @method('PUT')
@@ -192,6 +192,48 @@
                     email: "Please enter a valid email address",
                 },
                 mobile: {
+                    required: "Mobile is a required field!!!",
+                    minlength: "Mobile must be at least 8 characters long!!!",
+                    number: "Mobile must be numeric",
+                },
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $("#edituser").validate({
+            rules: {
+                xname: {
+                    required: true,
+                    minlength: 5
+                },
+                xaddress: {
+                    required: true,
+                    minlength: 10
+                },
+                xemail: {
+                    required: true,
+                    email: true
+                },
+                xmobile: {
+                    required: true,
+                    number: true,
+                    minlength: 8
+                },
+            },
+            messages: {
+                xname: {
+                    required: "Name is a required field!!!",
+                    minlength: "Name must be at least 5 characters long!!!",
+                },
+                xaddress: {
+                    required: "Address is a required field!!!",
+                    minlength: "Address must be at least 10 characters long!!!",
+                },
+                xemail: {
+                    required: "Email is a required field!!!",
+                    email: "Please enter a valid email address",
+                },
+                xmobile: {
                     required: "Mobile is a required field!!!",
                     minlength: "Mobile must be at least 8 characters long!!!",
                     number: "Mobile must be numeric",
