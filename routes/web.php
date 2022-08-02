@@ -21,7 +21,7 @@ Route::get('/', [App\Http\Controllers\StudentController::class, 'index'])->name(
 Route::get('students/create', [App\Http\Controllers\StudentController::class, 'create'])->name('student.create');
 Route::post('students/store', [App\Http\Controllers\StudentController::class, 'store'])->name('student.store');
 Route::get('students/edit/{student}', [App\Http\Controllers\StudentController::class, 'edit'])->name('student.edit');
-Route::PUT('students/update/{student}', [App\Http\Controllers\StudentController::class, 'update'])->name('student.update');
+Route::PUT('update', [App\Http\Controllers\StudentController::class, 'update'])->name('student.update');
 Route::get('search', [App\Http\Controllers\StudentController::class, 'search'])->name('student.search');
 
 Auth::routes();
